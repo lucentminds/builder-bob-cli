@@ -1,18 +1,37 @@
 {
   "name": "builder-bob",
   "version": "1.0.0",
+  "engine": "node 6.9.2",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./test/build.js",
+    "postinstall1": "cd",
+    "postinstall": "node scripts/post-install.js"
   },
-  "bin":{
+  "bin": {
     "bob": "bin/bob.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Scott Johnson",
   "license": "ISC",
   "files": [
-    "bin"
-  ]
+    "bin",
+    "lib",
+    "scripts",
+    "config-example.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucentminds/builder-bob.git"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "fs-extra": "^1.0.0",
+    "minimist": "^1.2.0",
+    "promise-file-watch": "git+https://github.com/lucentminds/promise-file-watch.git",
+    "promise-foreach": "git+https://github.com/lucentminds/promise-foreach.git",
+    "promise-resolve-path": "git+https://github.com/lucentminds/promise-resolve-path.git",
+    "q": "^1.4.1",
+    "vorpal": "^1.11.4"
+  }
 }
